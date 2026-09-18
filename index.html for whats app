@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You ❤️</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f8e8ed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, serif;
+        }
+
+        .card {
+            background: #fffdf8;
+            width: 500px;
+            max-width: 85%;
+            padding: 45px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(100, 50, 70, 0.12);
+        }
+
+        h1 {
+            color: #7b2945;
+            font-size: 34px;
+            line-height: 1.2;
+        }
+
+        p {
+            color: #555;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            padding: 15px 35px;
+            margin: 10px;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        .yes {
+            background: #e978a0;
+            color: white;
+        }
+
+        .no {
+            background: #b56bd6;
+            color: white;
+        }
+
+        .next {
+            background: #e978a0;
+            color: white;
+            width: 80%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .emoji {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- SCREEN 1 -->
+
+    <div class="card" id="screen1">
+
+        <div class="emoji">🌸</div>
+
+        <h1>
+            Will you go on a date with me?
+        </h1>
+
+        <p>
+            I have a little surprise planned for you ❤️
+        </p>
+
+        <button class="yes" onclick="showScreen2()">
+            YES ❤️
+        </button>
+
+        <button class="no" onclick="sayNo()">
+            NO 😏
+        </button>
+
+        <p id="noMessage"></p>
+
+    </div>
+
+
+    <!-- SCREEN 2 -->
+
+    <div class="card hidden" id="screen2">
+
+        <div class="emoji">🥹</div>
+
+        <h1>
+            WAIT... YOU ACTUALLY<br>
+            SAID YES? 😭
+        </h1>
+
+        <p>
+            I was really hoping you would say yes 😂❤️
+        </p>
+
+        <button class="next" onclick="showScreen3()">
+            okay okay! → 
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 3 -->
+
+    <div class="card hidden" id="screen3">
+
+        <div class="emoji">📅</div>
+
+        <h1>
+            So... when are you free?
+        </h1>
+
+        <p>
+            Pick a day 📅
+        </p>
+
+        <input
+            type="date"
+            id="date"
+            style="
+                padding: 15px;
+                width: 80%;
+                border-radius: 12px;
+                border: 1px solid #e6a8bd;
+                font-size: 16px;
+            "
+        >
+
+        <p>
+            What time? ⏰
+        </p>
+
+        <select
+            id="time"
+            style="
+                padding: 15px;
+                width: 87%;
+                border-radius: 12px;
+                border: 1px solid #e6a8bd;
+                font-size: 16px;
+            "
+        >
+
+            <option value="">Select a time...</option>
+            <option>10:00 AM</option>
+            <option>12:00 PM</option>
+            <option>2:00 PM</option>
+            <option>4:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+            <option>8:00 PM</option>
+
+        </select>
+
+        <br><br>
+
+        <button class="next" onclick="showScreen4()">
+            set the date! ❤️
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 4 -->
+
+    <div class="card hidden" id="screen4">
+
+        <div class="emoji">🍴✨</div>
+
+        <h1>
+            What are we feeling?
+        </h1>
+
+        <p>
+            Pick your vibe
+        </p>
+
+        <button class="yes" onclick="chooseFood('Pizza')">
+            🍕 Pizza
+        </button>
+
+        <button class="yes" onclick="chooseFood('Sushi')">
+            🍣 Sushi
+        </button>
+
+        <button class="yes" onclick="chooseFood('Burger')">
+            🍔 Burger
+        </button>
+
+        <button class="yes" onclick="chooseFood('Pasta')">
+            🍝 Pasta
+        </button>
+
+        <button class="yes" onclick="chooseFood('Tacos')">
+            🌮 Tacos
+        </button>
+
+        <button class="yes" onclick="chooseFood('Ramen')">
+            🍜 Ramen
+        </button>
+
+        <p id="foodMessage"></p>
+
+    </div>
+
+
+    <!-- SCREEN 5 -->
+
+    <div class="card hidden" id="screen5">
+
+        <div class="emoji">💕</div>
+
+        <h1>
+            IT'S A DATE! ❤️
+        </h1>
+
+        <p id="finalDetails"></p>
+
+        <p>
+            I'll come pick you up 🚗💕
+        </p>
+
+        <p>
+            See you soon! 🥰
+        </p>
+
+    </div>
+
+
+    <script>
+
+        let selectedDate = "";
+        let selectedTime = "";
+
+        function hideAllScreens() {
+
+            document.getElementById("screen1")
+                .classList.add("hidden");
+
+            document.getElementById("screen2")
+                .classList.add("hidden");
+
+            document.getElementById("screen3")
+                .classList.add("hidden");
+
+            document.getElementById("screen4")
+                .classList.add("hidden");
+
+            document.getElementById("screen5")
+                .classList.add("hidden");
+        }
+
+
+        function showScreen2() {
+
+            hideAllScreens();
+
+            document.getElementById("screen2")
+                .classList.remove("hidden");
+        }
+
+
+        function sayNo() {
+
+            document.getElementById("noMessage").innerHTML =
+                "Are you sure? 😏 Try again ❤️";
+        }
+
+
+        function showScreen3() {
+
+            hideAllScreens();
+
+            document.getElementById("screen3")
+                .classList.remove("hidden");
+        }
+
+
+        function showScreen4() {
+
+            selectedDate =
+                document.getElementById("date").value;
+
+            selectedTime =
+                document.getElementById("time").value;
+
+            if (selectedDate === "") {
+
+                alert("Please choose a date ❤️");
+                return;
+            }
+
+            if (selectedTime === "") {
+
+                alert("Please choose a time ❤️");
+                return;
+            }
+
+            hideAllScreens();
+
+            document.getElementById("screen4")
+                .classList.remove("hidden");
+        }
+
+
+        function chooseFood(food) {
+
+            document.getElementById("foodMessage").innerHTML =
+                "Yay! " + food + " it is! 🥰";
+
+            setTimeout(function() {
+
+                hideAllScreens();
+
+                document.getElementById("screen5")
+                    .classList.remove("hidden");
+
+                document.getElementById("finalDetails").innerHTML =
+                    "📅 " + selectedDate +
+                    "<br>⏰ " + selectedTime +
+                    "<br>🍴 " + food;
+
+            }, 1200);
+
+        }
+
+    </script>
+
+</body>
+</html>
