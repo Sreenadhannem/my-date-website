@@ -339,26 +339,44 @@
 
         function chooseFood(food) {
 
-            document.getElementById("foodMessage").innerHTML =
-                "Yay! " + food + " it is! 🥰";
+  // Google Apps Script Web App URL
+  var scriptURL = "https://script.google.com/macros/s/AKfycby8zud19ScVWt9pLN4sAjqrBD92UyXvyeAZVt1OMfpjDuJ6pkysPGMDBDKmEBe3U2MLww/exec";
 
-            setTimeout(function() {
+  // Send date, time and food to Google Sheet
+  fetch(scriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      date: selectedDate,
+      time: selectedTime,
+      food: food
+    })
+  });
 
-                hideAllScreens();
+  // Show selected food
+  document.getElementById("foodMessage").innerHTML =
+    "Yay! " + food + " it is! 🥰";
 
-                document.getElementById("screen5")
-                    .classList.remove("hidden");
+  setTimeout(function() {
 
-                document.getElementById("finalDetails").innerHTML =
-                    "📅 " + selectedDate +
-                    "<br>⏰ " + selectedTime +
-                    "<br>🍴 " + food;
+    hideAllScreens();
 
-            }, 1200);
+    document.getElementById("screen5")
+      .classList.remove("hidden");
 
-        }
+    document.getElementById("finalDetails").innerHTML =
+      "📅 " + selectedDate +
+      "<br>⏰ " + selectedTime +
+      "<br>🍴 " + food;
 
-    </script>
+    }, 1200);
+}
 
+</script>
 </body>
 </html>
+
+
