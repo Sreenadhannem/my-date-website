@@ -18,9 +18,11 @@
 body {
   margin: 0;
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: Georgia, serif;
 
   background:
@@ -35,9 +37,13 @@ body {
 .card {
   width: 100%;
   max-width: 450px;
+
   background: rgba(255,255,255,0.95);
+
   padding: 35px 25px;
+
   border-radius: 30px;
+
   text-align: center;
 
   box-shadow:
@@ -69,11 +75,17 @@ p {
 button {
   border: none;
   border-radius: 18px;
+
   padding: 14px 24px;
+
   margin: 8px;
+
   font-size: 17px;
+
   font-family: Georgia, serif;
+
   cursor: pointer;
+
   transition: 0.2s;
 }
 
@@ -98,61 +110,95 @@ button:hover {
 
 input,
 select {
+
   width: 90%;
+
   padding: 14px;
+
   margin: 8px 0 18px 0;
+
   border-radius: 14px;
+
   border: 1px solid #e2a7b8;
+
   background: #fffafa;
+
   font-size: 16px;
+
   color: #6b263b;
+
   font-family: Arial, sans-serif;
 }
 
 .food-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 12px;
+
   margin-top: 20px;
 }
 
 .food {
+
   width: 100%;
+
   margin: 0;
+
   background: #f9dce5;
+
   color: #72263d;
 }
 
 .message {
+
   margin-top: 15px;
+
   font-size: 18px;
+
   font-weight: bold;
 }
 
 .final-details {
+
   background: #fff0f4;
+
   padding: 18px;
+
   border-radius: 18px;
+
   margin: 20px 0;
+
   font-size: 18px;
+
   line-height: 2;
 }
 
 .small {
+
   font-size: 14px;
+
   opacity: 0.7;
 }
 
 @keyframes fadeIn {
 
   from {
+
     opacity: 0;
+
     transform: translateY(15px);
+
   }
 
   to {
+
     opacity: 1;
+
     transform: translateY(0);
+
   }
 
 }
@@ -165,7 +211,9 @@ select {
 <body>
 
 
+<!-- ========================= -->
 <!-- SCREEN 1 -->
+<!-- ========================= -->
 
 <div class="card" id="screen1">
 
@@ -182,13 +230,17 @@ select {
   <button
     class="yes"
     onclick="showScreen2()">
+
     YES ❤️
+
   </button>
 
   <button
     class="no"
     onclick="sayNo()">
+
     NO 🙈
+
   </button>
 
   <p
@@ -200,7 +252,9 @@ select {
 
 
 
+<!-- ========================= -->
 <!-- SCREEN 2 -->
+<!-- ========================= -->
 
 <div
   class="card hidden"
@@ -219,14 +273,18 @@ select {
   <button
     class="next"
     onclick="showScreen3()">
+
     okay okay! →
+
   </button>
 
 </div>
 
 
 
+<!-- ========================= -->
 <!-- SCREEN 3 -->
+<!-- ========================= -->
 
 <div
   class="card hidden"
@@ -268,29 +326,53 @@ select {
       Select a time
     </option>
 
-    <option value="10:00 AM">10:00 AM</option>
+    <option value="10:00 AM">
+      10:00 AM
+    </option>
 
-    <option value="11:00 AM">11:00 AM</option>
+    <option value="11:00 AM">
+      11:00 AM
+    </option>
 
-    <option value="12:00 PM">12:00 PM</option>
+    <option value="12:00 PM">
+      12:00 PM
+    </option>
 
-    <option value="1:00 PM">1:00 PM</option>
+    <option value="1:00 PM">
+      1:00 PM
+    </option>
 
-    <option value="2:00 PM">2:00 PM</option>
+    <option value="2:00 PM">
+      2:00 PM
+    </option>
 
-    <option value="3:00 PM">3:00 PM</option>
+    <option value="3:00 PM">
+      3:00 PM
+    </option>
 
-    <option value="4:00 PM">4:00 PM</option>
+    <option value="4:00 PM">
+      4:00 PM
+    </option>
 
-    <option value="5:00 PM">5:00 PM</option>
+    <option value="5:00 PM">
+      5:00 PM
+    </option>
 
-    <option value="6:00 PM">6:00 PM</option>
+    <option value="6:00 PM">
+      6:00 PM
+    </option>
 
-    <option value="7:00 PM">7:00 PM</option>
+    <option value="7:00 PM">
+      7:00 PM
+    </option>
 
-    <option value="8:00 PM">8:00 PM</option>
+    <option value="8:00 PM">
+      8:00 PM
+    </option>
 
-    <option value="9:00 PM">9:00 PM</option>
+    <option value="9:00 PM">
+      9:00 PM
+    </option>
 
   </select>
 
@@ -299,7 +381,9 @@ select {
   <button
     class="next"
     onclick="showScreen4()">
+
     set the date! ❤️
+
   </button>
 
   <p
@@ -311,7 +395,9 @@ select {
 
 
 
+<!-- ========================= -->
 <!-- SCREEN 4 -->
+<!-- ========================= -->
 
 <div
   class="card hidden"
@@ -332,37 +418,49 @@ select {
     <button
       class="food"
       onclick="chooseFood('Pizza')">
+
       🍕 Pizza
+
     </button>
 
     <button
       class="food"
       onclick="chooseFood('Sushi')">
+
       🍣 Sushi
+
     </button>
 
     <button
       class="food"
       onclick="chooseFood('Burger')">
+
       🍔 Burger
+
     </button>
 
     <button
       class="food"
       onclick="chooseFood('Pasta')">
+
       🍝 Pasta
+
     </button>
 
     <button
       class="food"
       onclick="chooseFood('Tacos')">
+
       🌮 Tacos
+
     </button>
 
     <button
       class="food"
       onclick="chooseFood('Ramen')">
+
       🍜 Ramen
+
     </button>
 
   </div>
@@ -376,7 +474,9 @@ select {
 
 
 
+<!-- ========================= -->
 <!-- SCREEN 5 -->
+<!-- ========================= -->
 
 <div
   class="card hidden"
@@ -601,7 +701,7 @@ function showScreen4() {
 function chooseFood(food) {
 
 
-  // Send information to Google Sheet
+  // Send the information to Google Sheet
 
   fetch(scriptURL, {
 
@@ -617,7 +717,7 @@ function chooseFood(food) {
     },
 
     body:
-      "name=" +
+      "personName=" +
       encodeURIComponent(selectedName) +
 
       "&date=" +
@@ -633,7 +733,7 @@ function chooseFood(food) {
 
 
 
-  // Show food message
+  // Show selected food
 
   document
     .getElementById("foodMessage")
