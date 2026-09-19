@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Little Plan ❤️</title>
 
@@ -17,17 +16,11 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body {
-
   margin: 0;
-
   min-height: 100vh;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   font-family: Georgia, serif;
 
   background:
@@ -36,30 +29,21 @@ body {
     #fff1f5;
 
   color: #6b263b;
-
   padding: 20px;
-
 }
 
 .card {
-
   width: 100%;
-
   max-width: 450px;
-
   background: rgba(255,255,255,0.95);
-
   padding: 35px 25px;
-
   border-radius: 30px;
-
   text-align: center;
 
   box-shadow:
     0 15px 40px rgba(100,40,60,0.15);
 
   animation: fadeIn 0.5s ease;
-
 }
 
 .hidden {
@@ -67,178 +51,108 @@ body {
 }
 
 h1 {
-
   font-size: 30px;
-
   margin-bottom: 15px;
-
   color: #72263d;
-
 }
 
 p {
-
   font-size: 18px;
-
   line-height: 1.6;
-
 }
 
 .dog {
-
   font-size: 90px;
-
   margin-bottom: 10px;
-
 }
 
 button {
-
   border: none;
-
   border-radius: 18px;
-
   padding: 14px 24px;
-
   margin: 8px;
-
   font-size: 17px;
-
   font-family: Georgia, serif;
-
   cursor: pointer;
-
   transition: 0.2s;
-
 }
 
 button:hover {
-
   transform: scale(1.05);
-
 }
 
 .yes {
-
   background: #a83d5a;
-
   color: white;
-
 }
 
 .no {
-
   background: #f5d9e1;
-
   color: #72263d;
-
 }
 
 .next {
-
   background: #a83d5a;
-
   color: white;
-
 }
 
 input,
 select {
-
   width: 90%;
-
   padding: 14px;
-
   margin: 8px 0 18px 0;
-
   border-radius: 14px;
-
   border: 1px solid #e2a7b8;
-
   background: #fffafa;
-
   font-size: 16px;
-
   color: #6b263b;
-
   font-family: Arial, sans-serif;
-
 }
 
 .food-grid {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 12px;
-
   margin-top: 20px;
-
 }
 
 .food {
-
   width: 100%;
-
   margin: 0;
-
   background: #f9dce5;
-
   color: #72263d;
-
 }
 
 .message {
-
   margin-top: 15px;
-
   font-size: 18px;
-
   font-weight: bold;
-
 }
 
 .final-details {
-
   background: #fff0f4;
-
   padding: 18px;
-
   border-radius: 18px;
-
   margin: 20px 0;
-
   font-size: 18px;
-
   line-height: 2;
-
 }
 
 .small {
-
   font-size: 14px;
-
   opacity: 0.7;
-
 }
 
 @keyframes fadeIn {
 
   from {
-
     opacity: 0;
-
     transform: translateY(15px);
-
   }
 
   to {
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
 
 }
@@ -354,53 +268,29 @@ select {
       Select a time
     </option>
 
-    <option value="10:00 AM">
-      10:00 AM
-    </option>
+    <option value="10:00 AM">10:00 AM</option>
 
-    <option value="11:00 AM">
-      11:00 AM
-    </option>
+    <option value="11:00 AM">11:00 AM</option>
 
-    <option value="12:00 PM">
-      12:00 PM
-    </option>
+    <option value="12:00 PM">12:00 PM</option>
 
-    <option value="1:00 PM">
-      1:00 PM
-    </option>
+    <option value="1:00 PM">1:00 PM</option>
 
-    <option value="2:00 PM">
-      2:00 PM
-    </option>
+    <option value="2:00 PM">2:00 PM</option>
 
-    <option value="3:00 PM">
-      3:00 PM
-    </option>
+    <option value="3:00 PM">3:00 PM</option>
 
-    <option value="4:00 PM">
-      4:00 PM
-    </option>
+    <option value="4:00 PM">4:00 PM</option>
 
-    <option value="5:00 PM">
-      5:00 PM
-    </option>
+    <option value="5:00 PM">5:00 PM</option>
 
-    <option value="6:00 PM">
-      6:00 PM
-    </option>
+    <option value="6:00 PM">6:00 PM</option>
 
-    <option value="7:00 PM">
-      7:00 PM
-    </option>
+    <option value="7:00 PM">7:00 PM</option>
 
-    <option value="8:00 PM">
-      8:00 PM
-    </option>
+    <option value="8:00 PM">8:00 PM</option>
 
-    <option value="9:00 PM">
-      9:00 PM
-    </option>
+    <option value="9:00 PM">9:00 PM</option>
 
   </select>
 
@@ -526,7 +416,9 @@ select {
 <script>
 
 
-// Variables
+// ==============================
+// VARIABLES
+// ==============================
 
 let selectedName = "";
 
@@ -536,14 +428,18 @@ let selectedTime = "";
 
 
 
-// Google Apps Script Web App URL
+// ==============================
+// GOOGLE APPS SCRIPT URL
+// ==============================
 
 const scriptURL =
 "https://script.google.com/macros/s/AKfcyby8zud19ScVWt9pLN4sAjqrBD92UyXvyeAZVt1OMfpjDuJ6pkysPGMDBDKmEBe3U2MLww/exec";
 
 
 
-// Hide all screens
+// ==============================
+// HIDE ALL SCREENS
+// ==============================
 
 function hideAllScreens() {
 
@@ -571,7 +467,9 @@ function hideAllScreens() {
 
 
 
-// YES button
+// ==============================
+// YES BUTTON
+// ==============================
 
 function showScreen2() {
 
@@ -585,7 +483,9 @@ function showScreen2() {
 
 
 
-// NO button
+// ==============================
+// NO BUTTON
+// ==============================
 
 function sayNo() {
 
@@ -598,7 +498,9 @@ function sayNo() {
 
 
 
-// Screen 2 → Screen 3
+// ==============================
+// SCREEN 2 → SCREEN 3
+// ==============================
 
 function showScreen3() {
 
@@ -612,7 +514,9 @@ function showScreen3() {
 
 
 
-// Screen 3 → Screen 4
+// ==============================
+// SCREEN 3 → SCREEN 4
+// ==============================
 
 function showScreen4() {
 
@@ -683,13 +587,16 @@ function showScreen4() {
 
   document
     .getElementById("screen4")
-    .classList.remove("hidden");
+    .classList
+    .remove("hidden");
 
 }
 
 
 
-// Food selection
+// ==============================
+// FOOD SELECTION
+// ==============================
 
 function chooseFood(food) {
 
@@ -709,17 +616,18 @@ function chooseFood(food) {
 
     },
 
-    body: new URLSearchParams({
+    body:
+      "name=" +
+      encodeURIComponent(selectedName) +
 
-      name: selectedName,
+      "&date=" +
+      encodeURIComponent(selectedDate) +
 
-      date: selectedDate,
+      "&time=" +
+      encodeURIComponent(selectedTime) +
 
-      time: selectedTime,
-
-      food: food
-
-    })
+      "&food=" +
+      encodeURIComponent(food)
 
   });
 
@@ -751,13 +659,17 @@ function chooseFood(food) {
       .getElementById("finalDetails")
       .innerHTML =
 
-      "❤️ " + selectedName +
+      "❤️ " +
+      selectedName +
 
-      "<br>📅 " + selectedDate +
+      "<br>📅 " +
+      selectedDate +
 
-      "<br>⏰ " + selectedTime +
+      "<br>⏰ " +
+      selectedTime +
 
-      "<br>🍴 " + food;
+      "<br>🍴 " +
+      food;
 
   }, 1200);
 
