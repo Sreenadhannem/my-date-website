@@ -1,382 +1,772 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For You ❤️</title>
+<meta charset="UTF-8">
 
-    <style>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: #f8e8ed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Georgia, serif;
-        }
+<title>Our Little Plan ❤️</title>
 
-        .card {
-            background: #fffdf8;
-            width: 500px;
-            max-width: 85%;
-            padding: 45px;
-            border-radius: 28px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(100, 50, 70, 0.12);
-        }
+<style>
 
-        h1 {
-            color: #7b2945;
-            font-size: 34px;
-            line-height: 1.2;
-        }
+* {
+  box-sizing: border-box;
+}
 
-        p {
-            color: #555;
-            font-size: 19px;
-            line-height: 1.6;
-        }
+body {
 
-        button {
-            border: none;
-            padding: 15px 35px;
-            margin: 10px;
-            border-radius: 30px;
-            font-size: 17px;
-            cursor: pointer;
-            font-family: Georgia, serif;
-            transition: 0.2s;
-        }
+  margin: 0;
 
-        button:hover {
-            transform: scale(1.08);
-        }
+  min-height: 100vh;
 
-        .yes {
-            background: #e978a0;
-            color: white;
-        }
+  display: flex;
 
-        .no {
-            background: #b56bd6;
-            color: white;
-        }
+  justify-content: center;
 
-        .next {
-            background: #e978a0;
-            color: white;
-            width: 80%;
-        }
+  align-items: center;
 
-        .hidden {
-            display: none;
-        }
+  font-family: Georgia, serif;
 
-        .emoji {
-            font-size: 65px;
-            margin-bottom: 10px;
-        }
+  background:
+    radial-gradient(circle at top left, #ffdce8, transparent 40%),
+    radial-gradient(circle at bottom right, #f8c8d8, transparent 40%),
+    #fff1f5;
 
-    </style>
+  color: #6b263b;
+
+  padding: 20px;
+
+}
+
+.card {
+
+  width: 100%;
+
+  max-width: 450px;
+
+  background: rgba(255,255,255,0.95);
+
+  padding: 35px 25px;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(100,40,60,0.15);
+
+  animation: fadeIn 0.5s ease;
+
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+
+  font-size: 30px;
+
+  margin-bottom: 15px;
+
+  color: #72263d;
+
+}
+
+p {
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+}
+
+.dog {
+
+  font-size: 90px;
+
+  margin-bottom: 10px;
+
+}
+
+button {
+
+  border: none;
+
+  border-radius: 18px;
+
+  padding: 14px 24px;
+
+  margin: 8px;
+
+  font-size: 17px;
+
+  font-family: Georgia, serif;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+button:hover {
+
+  transform: scale(1.05);
+
+}
+
+.yes {
+
+  background: #a83d5a;
+
+  color: white;
+
+}
+
+.no {
+
+  background: #f5d9e1;
+
+  color: #72263d;
+
+}
+
+.next {
+
+  background: #a83d5a;
+
+  color: white;
+
+}
+
+input,
+select {
+
+  width: 90%;
+
+  padding: 14px;
+
+  margin: 8px 0 18px 0;
+
+  border-radius: 14px;
+
+  border: 1px solid #e2a7b8;
+
+  background: #fffafa;
+
+  font-size: 16px;
+
+  color: #6b263b;
+
+  font-family: Arial, sans-serif;
+
+}
+
+.food-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+}
+
+.food {
+
+  width: 100%;
+
+  margin: 0;
+
+  background: #f9dce5;
+
+  color: #72263d;
+
+}
+
+.message {
+
+  margin-top: 15px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+}
+
+.final-details {
+
+  background: #fff0f4;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  margin: 20px 0;
+
+  font-size: 18px;
+
+  line-height: 2;
+
+}
+
+.small {
+
+  font-size: 14px;
+
+  opacity: 0.7;
+
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <!-- SCREEN 1 -->
 
-    <div class="card" id="screen1">
+<!-- SCREEN 1 -->
 
-        <div class="emoji">🌸</div>
+<div class="card" id="screen1">
 
-        <h1>
-            Will you go on a date with me?
-        </h1>
+  <div class="dog">🐶</div>
 
-        <p>
-            I have a little surprise planned for you ❤️
-        </p>
+  <h1>
+    🌸 Will you go on a date with me?
+  </h1>
 
-        <button class="yes" onclick="showScreen2()">
-            YES ❤️
-        </button>
+  <p>
+    I have a little question for you... ❤️
+  </p>
 
-        <button class="no" onclick="sayNo()">
-            NO 😏
-        </button>
+  <button
+    class="yes"
+    onclick="showScreen2()">
+    YES ❤️
+  </button>
 
-        <p id="noMessage"></p>
+  <button
+    class="no"
+    onclick="sayNo()">
+    NO 🙈
+  </button>
 
-    </div>
+  <p
+    id="noMessage"
+    class="message">
+  </p>
 
+</div>
 
-    <!-- SCREEN 2 -->
 
-    <div class="card hidden" id="screen2">
 
-        <div class="emoji">🥹</div>
+<!-- SCREEN 2 -->
 
-        <h1>
-            WAIT... YOU ACTUALLY<br>
-            SAID YES? 😭
-        </h1>
+<div
+  class="card hidden"
+  id="screen2">
 
-        <p>
-            I was really hoping you would say yes 😂❤️
-        </p>
+  <div class="dog">🥹</div>
 
-        <button class="next" onclick="showScreen3()">
-            okay okay! → 
-        </button>
+  <h1>
+    WAIT... YOU ACTUALLY SAID YES? 😭
+  </h1>
 
-    </div>
+  <p>
+    Okay okay... let's plan this properly. ❤️
+  </p>
 
+  <button
+    class="next"
+    onclick="showScreen3()">
+    okay okay! →
+  </button>
 
-    <!-- SCREEN 3 -->
+</div>
 
-    <div class="card hidden" id="screen3">
 
-        <div class="emoji">📅</div>
 
-        <h1>
-            So... when are you free?
-        </h1>
+<!-- SCREEN 3 -->
 
-        <p>
-            Pick a day 📅
-        </p>
+<div
+  class="card hidden"
+  id="screen3">
 
-        <input
-            type="date"
-            id="date"
-            style="
-                padding: 15px;
-                width: 80%;
-                border-radius: 12px;
-                border: 1px solid #e6a8bd;
-                font-size: 16px;
-            "
-        >
+  <div class="dog">📅</div>
 
-        <p>
-            What time? ⏰
-        </p>
+  <h1>
+    So... when are you free?
+  </h1>
 
-        <select
-            id="time"
-            style="
-                padding: 15px;
-                width: 87%;
-                border-radius: 12px;
-                border: 1px solid #e6a8bd;
-                font-size: 16px;
-            "
-        >
+  <p>
+    First, tell me your name ❤️
+  </p>
 
-            <option value="">Select a time...</option>
-            <option>10:00 AM</option>
-            <option>12:00 PM</option>
-            <option>2:00 PM</option>
-            <option>4:00 PM</option>
-            <option>6:00 PM</option>
-            <option>7:00 PM</option>
-            <option>8:00 PM</option>
+  <input
+    type="text"
+    id="name"
+    placeholder="Enter your name"
+    autocomplete="name"
+  >
 
-        </select>
+  <p>
+    Pick a day 📅
+  </p>
 
-        <br><br>
+  <input
+    type="date"
+    id="date"
+  >
 
-        <button class="next" onclick="showScreen4()">
-            set the date! ❤️
-        </button>
+  <p>
+    Pick a time ⏰
+  </p>
 
-    </div>
+  <select id="time">
 
+    <option value="">
+      Select a time
+    </option>
 
-    <!-- SCREEN 4 -->
+    <option value="10:00 AM">
+      10:00 AM
+    </option>
 
-    <div class="card hidden" id="screen4">
+    <option value="11:00 AM">
+      11:00 AM
+    </option>
 
-        <div class="emoji">🍴✨</div>
+    <option value="12:00 PM">
+      12:00 PM
+    </option>
 
-        <h1>
-            What are we feeling?
-        </h1>
+    <option value="1:00 PM">
+      1:00 PM
+    </option>
 
-        <p>
-            Pick your vibe
-        </p>
+    <option value="2:00 PM">
+      2:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Pizza')">
-            🍕 Pizza
-        </button>
+    <option value="3:00 PM">
+      3:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Sushi')">
-            🍣 Sushi
-        </button>
+    <option value="4:00 PM">
+      4:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Burger')">
-            🍔 Burger
-        </button>
+    <option value="5:00 PM">
+      5:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Pasta')">
-            🍝 Pasta
-        </button>
+    <option value="6:00 PM">
+      6:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Tacos')">
-            🌮 Tacos
-        </button>
+    <option value="7:00 PM">
+      7:00 PM
+    </option>
 
-        <button class="yes" onclick="chooseFood('Ramen')">
-            🍜 Ramen
-        </button>
+    <option value="8:00 PM">
+      8:00 PM
+    </option>
 
-        <p id="foodMessage"></p>
+    <option value="9:00 PM">
+      9:00 PM
+    </option>
 
-    </div>
+  </select>
 
+  <br>
 
-    <!-- SCREEN 5 -->
+  <button
+    class="next"
+    onclick="showScreen4()">
+    set the date! ❤️
+  </button>
 
-    <div class="card hidden" id="screen5">
+  <p
+    id="dateMessage"
+    class="message">
+  </p>
 
-        <div class="emoji">💕</div>
+</div>
 
-        <h1>
-            IT'S A DATE! ❤️
-        </h1>
 
-        <p id="finalDetails"></p>
 
-        <p>
-            I'll come pick you up 🚗💕
-        </p>
+<!-- SCREEN 4 -->
 
-        <p>
-            See you soon! 🥰
-        </p>
+<div
+  class="card hidden"
+  id="screen4">
 
-    </div>
+  <div class="dog">🍴</div>
 
+  <h1>
+    What should we eat? 😋
+  </h1>
 
-    <script>
+  <p>
+    You choose. I'll happily join you ❤️
+  </p>
 
-        let selectedDate = "";
-        let selectedTime = "";
+  <div class="food-grid">
 
-        function hideAllScreens() {
+    <button
+      class="food"
+      onclick="chooseFood('Pizza')">
+      🍕 Pizza
+    </button>
 
-            document.getElementById("screen1")
-                .classList.add("hidden");
+    <button
+      class="food"
+      onclick="chooseFood('Sushi')">
+      🍣 Sushi
+    </button>
 
-            document.getElementById("screen2")
-                .classList.add("hidden");
+    <button
+      class="food"
+      onclick="chooseFood('Burger')">
+      🍔 Burger
+    </button>
 
-            document.getElementById("screen3")
-                .classList.add("hidden");
+    <button
+      class="food"
+      onclick="chooseFood('Pasta')">
+      🍝 Pasta
+    </button>
 
-            document.getElementById("screen4")
-                .classList.add("hidden");
+    <button
+      class="food"
+      onclick="chooseFood('Tacos')">
+      🌮 Tacos
+    </button>
 
-            document.getElementById("screen5")
-                .classList.add("hidden");
-        }
+    <button
+      class="food"
+      onclick="chooseFood('Ramen')">
+      🍜 Ramen
+    </button>
 
+  </div>
 
-        function showScreen2() {
+  <p
+    id="foodMessage"
+    class="message">
+  </p>
 
-            hideAllScreens();
+</div>
 
-            document.getElementById("screen2")
-                .classList.remove("hidden");
-        }
 
 
-        function sayNo() {
+<!-- SCREEN 5 -->
 
-            document.getElementById("noMessage").innerHTML =
-                "Are you sure? 😏 Try again ❤️";
-        }
+<div
+  class="card hidden"
+  id="screen5">
 
+  <div class="dog">🥰</div>
 
-        function showScreen3() {
+  <h1>
+    IT'S A DATE! ❤️
+  </h1>
 
-            hideAllScreens();
+  <p>
+    I'm so glad you said yes!
+  </p>
 
-            document.getElementById("screen3")
-                .classList.remove("hidden");
-        }
+  <div
+    class="final-details"
+    id="finalDetails">
+  </div>
 
+  <p>
+    I'll come pick you up 🚗💕
+  </p>
 
-        function showScreen4() {
+  <p>
+    See you soon! 🥰
+  </p>
 
-            selectedDate =
-                document.getElementById("date").value;
+  <p class="small">
+    Our little plan is officially confirmed ❤️
+  </p>
 
-            selectedTime =
-                document.getElementById("time").value;
+</div>
 
-            if (selectedDate === "") {
 
-                alert("Please choose a date ❤️");
-                return;
-            }
 
-            if (selectedTime === "") {
+<script>
 
-                alert("Please choose a time ❤️");
-                return;
-            }
 
-            hideAllScreens();
+// Variables
 
-            document.getElementById("screen4")
-                .classList.remove("hidden");
-        }
+let selectedName = "";
 
+let selectedDate = "";
 
-        function chooseFood(food) {
+let selectedTime = "";
 
-  // Google Apps Script Web App URL
-  var scriptURL = "https://script.google.com/macros/s/AKfycby8zud19ScVWt9pLN4sAjqrBD92UyXvyeAZVt1OMfpjDuJ6pkysPGMDBDKmEBe3U2MLww/exec";
 
-  // Send date, time and food to Google Sheet
+
+// Google Apps Script Web App URL
+
+const scriptURL =
+"https://script.google.com/macros/s/AKfcyby8zud19ScVWt9pLN4sAjqrBD92UyXvyeAZVt1OMfpjDuJ6pkysPGMDBDKmEBe3U2MLww/exec";
+
+
+
+// Hide all screens
+
+function hideAllScreens() {
+
+  document
+    .getElementById("screen1")
+    .classList.add("hidden");
+
+  document
+    .getElementById("screen2")
+    .classList.add("hidden");
+
+  document
+    .getElementById("screen3")
+    .classList.add("hidden");
+
+  document
+    .getElementById("screen4")
+    .classList.add("hidden");
+
+  document
+    .getElementById("screen5")
+    .classList.add("hidden");
+
+}
+
+
+
+// YES button
+
+function showScreen2() {
+
+  hideAllScreens();
+
+  document
+    .getElementById("screen2")
+    .classList.remove("hidden");
+
+}
+
+
+
+// NO button
+
+function sayNo() {
+
+  document
+    .getElementById("noMessage")
+    .innerHTML =
+    "Hmm... maybe try the YES button? 🥺❤️";
+
+}
+
+
+
+// Screen 2 → Screen 3
+
+function showScreen3() {
+
+  hideAllScreens();
+
+  document
+    .getElementById("screen3")
+    .classList.remove("hidden");
+
+}
+
+
+
+// Screen 3 → Screen 4
+
+function showScreen4() {
+
+  selectedName =
+    document
+      .getElementById("name")
+      .value
+      .trim();
+
+  selectedDate =
+    document
+      .getElementById("date")
+      .value;
+
+  selectedTime =
+    document
+      .getElementById("time")
+      .value;
+
+
+
+  if (selectedName === "") {
+
+    document
+      .getElementById("dateMessage")
+      .innerHTML =
+      "Please tell me your name first ❤️";
+
+    return;
+
+  }
+
+
+
+  if (selectedDate === "") {
+
+    document
+      .getElementById("dateMessage")
+      .innerHTML =
+      "Please choose a date 📅";
+
+    return;
+
+  }
+
+
+
+  if (selectedTime === "") {
+
+    document
+      .getElementById("dateMessage")
+      .innerHTML =
+      "Please choose a time ⏰";
+
+    return;
+
+  }
+
+
+
+  document
+    .getElementById("dateMessage")
+    .innerHTML = "";
+
+
+
+  hideAllScreens();
+
+  document
+    .getElementById("screen4")
+    .classList.remove("hidden");
+
+}
+
+
+
+// Food selection
+
+function chooseFood(food) {
+
+
+  // Send information to Google Sheet
+
   fetch(scriptURL, {
+
     method: "POST",
+
     mode: "no-cors",
+
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
+
+      "Content-Type":
+        "application/x-www-form-urlencoded"
+
     },
+
     body: new URLSearchParams({
+
+      name: selectedName,
+
       date: selectedDate,
+
       time: selectedTime,
+
       food: food
+
     })
+
   });
 
-  // Show selected food
-  document.getElementById("foodMessage").innerHTML =
+
+
+  // Show food message
+
+  document
+    .getElementById("foodMessage")
+    .innerHTML =
     "Yay! " + food + " it is! 🥰";
+
+
+
+  // Show final screen
 
   setTimeout(function() {
 
     hideAllScreens();
 
-    document.getElementById("screen5")
-      .classList.remove("hidden");
+    document
+      .getElementById("screen5")
+      .classList
+      .remove("hidden");
 
-    document.getElementById("finalDetails").innerHTML =
-      "📅 " + selectedDate +
+
+
+    document
+      .getElementById("finalDetails")
+      .innerHTML =
+
+      "❤️ " + selectedName +
+
+      "<br>📅 " + selectedDate +
+
       "<br>⏰ " + selectedTime +
+
       "<br>🍴 " + food;
 
-    }, 1200);
+  }, 1200);
+
 }
 
+
 </script>
+
+
 </body>
+
 </html>
-
-
